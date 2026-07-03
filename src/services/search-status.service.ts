@@ -642,9 +642,10 @@ class SearchStatusTracker {
     networkError?: string
   ): Promise<void> {
     try {
-      const req = require('express')?.request;
-      const userAgent = req?.get('user-agent') || 'unknown';
-      const ipAddress = req?.ip || 'unknown';
+      // Background workers do not have an active HTTP request context.
+      // Trying to access require('express').request properties here causes TypeErrors.
+      const userAgent = 'background-worker';
+      const ipAddress = 'internal';
 
       await SearchHistory.updateOne(
         { searchSessionId: sessionId },
