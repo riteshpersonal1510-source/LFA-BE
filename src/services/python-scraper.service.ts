@@ -659,7 +659,7 @@ export class PythonScraperService {
         // Transient error check (AbortError or fetch failed)
         if (msg.includes('aborted') || msg.includes('fetch failed') || msg.includes('ECONNREFUSED')) {
           logger.warn({ err: msg, jobId, sessionId }, '[PYTHON_SCRAPER] Transient network error during poll, retrying...');
-          searchStatus.addLog(sessionId, `[PYTHON_SCRAPER] Transient network error: ${msg}. Retrying...`, 'warning');
+          searchStatus.addLog(sessionId, `[PYTHON_SCRAPER] Transient network error: ${msg}. Retrying...`, 'warn');
           await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
           continue;
         }

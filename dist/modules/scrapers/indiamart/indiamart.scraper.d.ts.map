@@ -1,1 +1,0 @@
-{"version":3,"file":"indiamart.scraper.d.ts","sourceRoot":"","sources":["../../../../src/modules/scrapers/indiamart/indiamart.scraper.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAe,aAAa,EAAE,cAAc,EAAE,MAAM,oCAAoC,CAAC;AAOrG,qBAAa,gBAAgB;IACrB,MAAM,CAAC,OAAO,EAAE,cAAc,GAAG;QAAE,eAAe,CAAC,EAAE,MAAM,CAAA;KAAE,GAAG,OAAO,CAAC,aAAa,CAAC;IAiI5F,OAAO,CAAC,mBAAmB;CAU5B"}
