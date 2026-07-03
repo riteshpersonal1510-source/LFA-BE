@@ -53,9 +53,16 @@ if (!fs.existsSync(appPath)) {
 console.log(`🚀 Starting Lead Finder Backend from ${appPath}`);
 
 // Set environment variables
-// Use project-local browser directory so Render preserves it between build and runtime
+// CRITICAL: Force project-local browser directory. Render deletes /opt/render/.cache after build.
+// Override any dashboard env var that uses '0' or points to .cache
 const pwBrowsersPath = path.resolve(backendDir, 'pw-browsers');
-process.env.PLAYWRIGHT_BROWSERS_PATH = process.env.PLAYWRIGHT_BROWSERS_PATH || pwBrowsersPath;
+const currentPwPath = process.env.PLAYWRIGHT_BROWSERS_PATH || '';
+if (!currentPwPath || currentPwPath === '0' || currentPwPath.includes('.cache')) {
+  process.env.PLAYWRIGHT_BROWSERS_PATH = pwBrowsersPath;
+  console.log(`📍 PLAYWRIGHT_BROWSERS_PATH forced to: ${pwBrowsersPath}`);
+} else {
+  console.log(`📍 PLAYWRIGHT_BROWSERS_PATH: ${currentPwPath}`);
+}
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
