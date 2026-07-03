@@ -1,0 +1,1 @@
+{"version":3,"file":"indiamart.profile.d.ts","sourceRoot":"","sources":["../../../../src/modules/scrapers/indiamart/indiamart.profile.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,YAAY,CAAC;AAElC,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,mBAAmB,CAAC;AAM/D,wBAAsB,YAAY,CAChC,IAAI,EAAE,IAAI,EACV,UAAU,EAAE,MAAM,EAClB,WAAW,EAAE,MAAM,GAClB,OAAO,CAAC,qBAAqB,GAAG,IAAI,CAAC,CA6FvC"}

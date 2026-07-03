@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const enrichment_controller_1 = require("../controllers/enrichment.controller");
+const error_handler_1 = require("../utils/error-handler");
+const router = (0, express_1.Router)();
+const wrap = (fn) => (0, error_handler_1.asyncHandler)(fn);
+router.get('/status', wrap(enrichment_controller_1.enrichmentController.getOrchestratorStatus));
+router.get('/leads', wrap(enrichment_controller_1.enrichmentController.getEnrichableLeads));
+router.post('/leads/:id/enqueue', wrap(enrichment_controller_1.enrichmentController.enqueueLead));
+router.post('/leads/enqueue-batch', wrap(enrichment_controller_1.enrichmentController.enqueueMultiple));
+router.post('/leads/:id/enrich', wrap(enrichment_controller_1.enrichmentController.enrichLead));
+router.get('/leads/:id/status', wrap(enrichment_controller_1.enrichmentController.getEnrichmentStatus));
+router.post('/backfill/start', wrap(enrichment_controller_1.enrichmentController.startBackfill));
+router.post('/backfill/missing-fields', wrap(enrichment_controller_1.enrichmentController.startMissingFieldsBackfill));
+router.get('/backfill/status', wrap(enrichment_controller_1.enrichmentController.getBackfillStatus));
+router.get('/missing-fields/count', wrap(enrichment_controller_1.enrichmentController.getMissingFieldsCount));
+router.post('/cache/clear', wrap(enrichment_controller_1.enrichmentController.clearCache));
+exports.default = router;
+//# sourceMappingURL=enrichment.route.js.map

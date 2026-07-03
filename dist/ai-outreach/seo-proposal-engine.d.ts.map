@@ -1,0 +1,1 @@
+{"version":3,"file":"seo-proposal-engine.d.ts","sourceRoot":"","sources":["../../src/ai-outreach/seo-proposal-engine.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AACnE,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,qBAAa,iBAAkB,SAAQ,iBAAiB;IACtD,gBAAgB,CAAC,IAAI,EAAE,SAAS,GAAG,iBAAiB;CAGrD;AAED,eAAO,MAAM,iBAAiB,mBAA0B,CAAC"}

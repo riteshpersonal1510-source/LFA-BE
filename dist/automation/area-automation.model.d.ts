@@ -1,0 +1,65 @@
+import { Document, Model } from 'mongoose';
+import type { AreaJobStatus, AreaSessionStatus, AreaAutomationSourceResult } from './area-automation.types';
+export interface IAreaJobDocument extends Document {
+    sessionId: string;
+    businessType: string;
+    state: string;
+    city: string;
+    area?: string;
+    country?: string;
+    sources: string[];
+    status: AreaJobStatus;
+    progress: string;
+    currentStage: string;
+    totalLeads: number;
+    savedLeads: number;
+    duplicates: number;
+    rejected: number;
+    attempts: number;
+    sourceResults: AreaAutomationSourceResult[];
+    startedAt: Date | null;
+    completedAt: Date | null;
+    failedReason: string | null;
+    queuePosition: number;
+    totalJobs: number;
+}
+export interface IAreaSessionDocument extends Document<string> {
+    name: string;
+    businessTypes: string[];
+    state: string;
+    cities: string[];
+    country?: string;
+    sources: string[];
+    status: AreaSessionStatus;
+    totalJobs: number;
+    completedJobs: number;
+    failedJobs: number;
+    runningJobs: number;
+    skippedJobs: number;
+    totalLeads: number;
+    savedLeads: number;
+    duplicates: number;
+    rejected: number;
+    currentJobId: string | null;
+    currentStage: string;
+    lastHeartbeat: Date | null;
+    startedAt: Date | null;
+    completedAt: Date | null;
+    pausedAt: Date | null;
+    archivedAt: Date | null;
+    retryCount: number;
+    lastRunAt: Date | null;
+    maxLeads: number;
+    concurrency: number;
+    retryEnabled: boolean;
+    dedupEnabled: boolean;
+    aiAuditEnabled: boolean;
+    autoOutreach: boolean;
+    autoReport: boolean;
+    autoWhatsApp: boolean;
+    schedule: string;
+    frequency: string;
+}
+export declare const AreaJobModel: Model<IAreaJobDocument>;
+export declare const AreaSessionModel: Model<IAreaSessionDocument>;
+//# sourceMappingURL=area-automation.model.d.ts.map
