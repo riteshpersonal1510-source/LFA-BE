@@ -53,7 +53,9 @@ if (!fs.existsSync(appPath)) {
 console.log(`🚀 Starting Lead Finder Backend from ${appPath}`);
 
 // Set environment variables
-process.env.PLAYWRIGHT_BROWSERS_PATH = process.env.PLAYWRIGHT_BROWSERS_PATH || '0';
+// Use project-local browser directory so Render preserves it between build and runtime
+const pwBrowsersPath = path.resolve(backendDir, 'pw-browsers');
+process.env.PLAYWRIGHT_BROWSERS_PATH = process.env.PLAYWRIGHT_BROWSERS_PATH || pwBrowsersPath;
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
