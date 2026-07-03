@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Wbesite Audio Report - Orbit Web Solution | Opti Matrix Solutions
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page { margin: 20mm; size: A4; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: #1E293B;
+      font-size: 11px;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20mm 15mm 15mm;
+      background: #FFFFFF;
+      color: #1E293B;
+    }
+
+    /* ── AGENCY HEADER ── */
+    .agency-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #F8FAFC;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      border: 1px solid #E2E8F0;
+    }
+    .agency-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .agency-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+    .agency-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .agency-tagline {
+      font-size: 9px;
+      color: #64748B;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+    .agency-meta {
+      text-align: right;
+    }
+    .report-id {
+      font-size: 9px;
+      font-weight: 600;
+      color: #4F46E5;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .report-date {
+      font-size: 9px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      border: 2px solid #E2E8F0;
+    }
+    .hero-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .hero-left { flex: 1; }
+    .hero-kicker {
+      font-size: 9px;
+      font-weight: 600;
+      color: #64748B;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .hero-chip {
+      font-size: 10px;
+      font-weight: 500;
+      color: #475569;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 4px 10px;
+    }
+    .hero-right {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .hero-score-block {
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      min-width: 80px;
+    }
+    .hero-score-val {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .hero-score-lbl {
+      font-size: 9px;
+      font-weight: 600;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+    }
+
+    /* ── PROFILE CARD ── */
+    .profile-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .profile-left { flex: 1; }
+    .profile-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-top: 12px;
+    }
+    .profile-cell {}
+    .profile-cell-label {
+      font-size: 9px;
+      font-weight: 700;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      margin-bottom: 4px;
+    }
+    .profile-cell-value {
+      font-size: 11px;
+      color: #334155;
+      word-break: break-word;
+    }
+    .profile-right {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 28px;
+    }
+    .section-header {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #E2E8F0;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-icon { font-size: 16px; color: #4F46E5; }
+
+    /* ── CARDS ── */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #4F46E5;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      margin-bottom: 8px;
+    }
+
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .two-col > .card { margin-bottom: 0; }
+
+    /* ── BADGE ── */
+    .badge-success { display:inline-block;padding:4px 12px;border-radius:16px;background:#ECFDF5;color:#059669;font-size:10px;font-weight:600; }
+    .badge-warning { display:inline-block;padding:4px 12px;border-radius:16px;background:#FFFBEB;color:#D97706;font-size:10px;font-weight:600; }
+    .badge-danger  { display:inline-block;padding:4px 12px;border-radius:16px;background:#FEF2F2;color:#DC2626;font-size:10px;font-weight:600; }
+
+    /* ── PLATFORM BADGES ── */
+    .platforms-wrap { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px; }
+    .platform-badge { display:inline-block;padding:3px 10px;border-radius:16px;background:#EFF6FF;color:#1D4ED8;font-size:10px;font-weight:500; }
+
+    /* ── SCORES TRIO ── */
+    .scores-trio {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .trio-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 10px 12px;
+      text-align: center;
+      background: #FFFFFF;
+    }
+    .ring-wrap {
+      position: relative;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 8px;
+    }
+    .ring-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ring-val {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .trio-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .trio-sub {
+      font-size: 9px;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    /* ── STATUS CHECKS ── */
+    .checks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 12px;
+    }
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .check-row:last-child { border-bottom: none; }
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .status-pass { background:#ECFDF5; color:#059669; }
+    .status-fail { background:#FEF2F2; color:#DC2626; }
+    .status-neutral { background:#F1F5F9; color:#94A3B8; }
+    .check-label { font-size: 11px; color: #334155; }
+    .check-note { font-size: 9px; color: #94A3B8; display: block; }
+
+    /* ── SCORE BARS ── */
+    .score-bar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .score-bar-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 120px;
+    }
+    .score-bar-icon { font-size: 12px; }
+    .score-bar-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .score-bar-track {
+      flex: 1;
+      height: 6px;
+      background: #F1F5F9;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.3s ease;
+    }
+    .score-bar-value {
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 24px;
+      text-align: right;
+    }
+
+    /* ── ISSUES ── */
+    .count-badge {
+      background: #EEF2FF;
+      color: #4F46E5;
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 16px;
+      padding: 1px 8px;
+    }
+    .issues-list { display: flex; flex-direction: column; gap: 0; }
+    .issue-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .issue-row:last-child { border-bottom: none; }
+    .severity-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+    .severity-high .severity-dot { background: #DC2626; }
+    .severity-medium .severity-dot { background: #D97706; }
+    .severity-low .severity-dot { background: #94A3B8; }
+    .issue-desc { font-size: 11px; color: #1E293B; font-weight: 500; }
+    .issue-type { font-size: 9px; color: #94A3B8; margin-top: 2px; }
+
+    /* ── SEO ── */
+    .seo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 18px;
+    }
+    .seo-cell {}
+    .seo-cell.seo-inline {}
+    .seo-value { font-size: 11px; color: #334155; margin-top: 3px; word-break: break-word; }
+
+    /* ── AI CARD ── */
+    .ai-card { background: #F8FAFC; border: 1px solid #C7D2FE; border-radius: 8px; }
+    .ai-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .ai-chip {
+      font-size: 9px;
+      font-weight: 700;
+      background: #4F46E5;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .ai-chip-sub { font-size: 9px; color: #4F46E5; font-weight: 500; }
+    .ai-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 6px;
+      margin-top: 10px;
+    }
+    .ai-section-label.red { color: #DC2626; }
+    .ai-section-label.green { color: #059669; }
+
+    /* ── RECOMMENDATION ── */
+    .recommendation-card {
+      background: #F8FAFC;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+    .rec-icon { font-size: 20px; flex-shrink: 0; }
+
+    /* ── ALERT ── */
+    .alert {
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+    }
+    .alert-icon { font-size: 18px; flex-shrink: 0; }
+    .alert-title { font-size: 11px; font-weight: 700; color: #92400E; margin-bottom: 4px; }
+    .alert-body { font-size: 10px; color: #78350F; line-height: 1.5; }
+
+    /* ── BULLET LISTS ── */
+    .bullet-list { padding-left: 16px; }
+    .bullet-list li { font-size: 11px; line-height: 1.6; margin-bottom: 3px; }
+    .bullet-list.red li { color: #7F1D1D; }
+    .bullet-list.green li { color: #065F46; }
+    .bullet-list.blue li { color: #1E3A8A; }
+
+    /* ── OPP BADGE ── */
+    .opp-badge {
+      display:inline-block;
+      padding:3px 10px;
+      border-radius:16px;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:0.06em;
+    }
+    .opp-high   { background:#ECFDF5; color:#059669; }
+    .opp-medium { background:#FFFBEB; color:#D97706; }
+    .opp-low    { background:#FEF2F2; color:#DC2626; }
+
+    /* ── POTENTIAL LIST ── */
+    .potential-list { display: flex; flex-direction: column; gap: 0; }
+    .potential-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .potential-row:last-child { border-bottom: none; }
+    .potential-label { font-size: 10px; font-weight: 600; color: #64748B; flex-shrink: 0; }
+    .potential-value { font-size: 11px; color: #334155; text-align: right; }
+
+    /* ── OUTREACH ── */
+    .outreach-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 10px;
+      line-height: 1.5;
+      color: #475569;
+      white-space: pre-wrap;
+      max-height: 160px;
+      overflow: hidden;
+    }
+    .whatsapp-box { background: #F0FDF4; border-color: #BBF7D0; }
+    .muted-block { font-size: 11px; color: #94A3B8; font-style: italic; }
+
+    /* ── PITCH LIST ── */
+    .pitch-list { display: flex; flex-direction: column; gap: 8px; }
+    .pitch-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .pitch-item:last-child { border-bottom: none; }
+    .pitch-tag {
+      flex-shrink: 0;
+      font-size: 9px;
+      font-weight: 700;
+      background: #EEF2FF;
+      color: #4F46E5;
+      border-radius: 6px;
+      padding: 3px 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      min-width: 80px;
+      text-align: center;
+    }
+    .pitch-text { font-size: 10px; color: #334155; line-height: 1.5; }
+
+    /* ── AI RECO GRID ── */
+    .reco-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .reco-card {
+      border-radius: 8px;
+      padding: 14px 14px 12px;
+      border-left: 3px solid;
+      background: #FFFFFF;
+    }
+    .reco-red    { border-left-color:#DC2626; }
+    .reco-amber  { border-left-color:#D97706; }
+    .reco-green  { border-left-color:#059669; }
+    .reco-blue   { border-left-color:#2563EB; }
+    .reco-purple { border-left-color:#7C3AED; }
+    .reco-num {
+      font-size: 9px;
+      font-weight: 700;
+      color: rgba(0,0,0,0.25);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .reco-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+
+    /* ── MISC ── */
+    .body-text { font-size: 10px; color: #475569; line-height: 1.5; }
+    .mini-label {
+      font-size: 9px;
+      font-weight: 700;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+    }
+    .muted { font-size: 11px; color: #94A3B8; }
+    .divider-thin { border: none; border-top: 1px solid #F1F5F9; margin: 8px 0; }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #E2E8F0;
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-logo-mark {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+    }
+    .footer-brand-name { font-size: 12px; font-weight: 700; color: #0F172A; }
+    .footer-brand-sub  { font-size: 9px; color: #64748B; }
+    .footer-contact {
+      text-align: right;
+      font-size: 9px;
+      color: #64748B;
+      line-height: 1.6;
+    }
+    .footer-disclamer {
+      font-size: 9px;
+      color: #94A3B8;
+      text-align: center;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; }
+      .card, .trio-card, .reco-card, .profile-card { break-inside: avoid; }
+      .section { break-inside: avoid; }
+      .agency-bar, .hero, .profile-card { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- AGENCY BAR -->
+  <div class="agency-bar">
+    <div class="agency-logo">
+      <div class="agency-logo-mark">OM</div>
+      <div>
+        <div class="agency-name">Opti Matrix Solutions</div>
+        <div class="agency-tagline">Digital Growth & Web Intelligence Agency</div>
+      </div>
+    </div>
+    <div class="agency-meta">
+      <div class="report-id">Report #OMS-MQIZG00Z</div>
+      <div class="report-date">Generated 18 June 2026</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-kicker">Website Audit Report</div>
+        <div class="hero-title">Orbit Web Solution</div>
+        <div class="hero-sub">Professional Digital Presence Analysis by Opti Matrix Solutions</div>
+        <div class="hero-meta">
+          <span class="hero-chip">Standalone Website</span>
+          <span class="hero-chip">Website designer</span>
+          <span class="hero-chip">★ 5 (0 reviews)</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-score-block">
+          <div class="hero-score-val" style="color:#059669;">85</div>
+          <div class="hero-score-lbl">Audit Score</div>
+        </div>
+        <div class="hero-score-block">
+          <div class="hero-score-val" style="color:#D97706;">75</div>
+          <div class="hero-score-lbl">Opportunity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE CARD -->
+  <div class="profile-card">
+    <div class="profile-left">
+      <div class="profile-name">Orbit Web Solution</div>
+      <span class="badge-success">Standalone Website</span>
+      <div class="profile-grid">
+        <div class="profile-cell"><div class="profile-cell-label">Address</div><div class="profile-cell-value">03, Second Floor, J.P. Complex Near Old Police Station, Naroda, Ahmedabad, Gujarat 382330</div></div>
+        <div class="profile-cell"><div class="profile-cell-label">Phone</div><div class="profile-cell-value">9723458807</div></div>
+        
+        <div class="profile-cell"><div class="profile-cell-label">Rating</div><div class="profile-cell-value">★★★★★ 5</div></div>
+        
+        <div class="profile-cell" style="grid-column:1/-1;"><div class="profile-cell-label">Website</div><div class="profile-cell-value" style="word-break:break-all;">https://orbitweb.co.in</div></div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+    <!-- RESPONSIVE AUDIT -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">📱</span> Responsive & UI/UX Audit</div>
+      <div class="scores-trio">
+        <div class="trio-card" style="background:#F8FAFC;border-color:#E2E8F0;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#94A3B8" stroke-width="6"
+        stroke-dasharray="0 188.49555921538757" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#94A3B8;">N/A</div>
+            </div>
+          </div>
+          <div class="trio-label">Responsive</div>
+          <div class="trio-sub" style="color:#94A3B8;">N/A</div>
+        </div>
+        <div class="trio-card" style="background:#F8FAFC;border-color:#E2E8F0;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#94A3B8" stroke-width="6"
+        stroke-dasharray="0 188.49555921538757" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#94A3B8;">N/A</div>
+            </div>
+          </div>
+          <div class="trio-label">UI / UX</div>
+          <div class="trio-sub" style="color:#94A3B8;">N/A</div>
+        </div>
+        <div class="trio-card" style="background:#F8FAFC;border-color:#E2E8F0;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#94A3B8" stroke-width="6"
+        stroke-dasharray="0 188.49555921538757" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#94A3B8;">N/A</div>
+            </div>
+          </div>
+          <div class="trio-label">Mobile</div>
+          <div class="trio-sub" style="color:#94A3B8;">N/A</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Responsive Checks</div>
+        <div class="checks-grid">
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">Mobile Friendly</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">Responsive Layout</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">Viewport Meta Tag</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">Touch Friendly</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">Font Readability</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">No Horizontal Scroll</span>
+        
+      </div>
+    </div>
+  
+          
+    <div class="check-row">
+      <span class="check-icon status-neutral">–</span>
+      <div class="check-body">
+        <span class="check-label">No Overflow Issues</span>
+        
+      </div>
+    </div>
+  
+        </div>
+      </div>
+
+      
+    </div>
+
+    <!-- SEO INTELLIGENCE -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">🔍</span> SEO Intelligence</div>
+      <div class="card">
+        <div class="seo-grid">
+          <div class="seo-cell">
+            <div class="mini-label">Meta Title</div>
+            <div class="seo-value"><span class="muted">Not detected</span></div>
+          </div>
+          <div class="seo-cell">
+            <div class="mini-label">Meta Description</div>
+            <div class="seo-value"><span class="muted">Not detected</span></div>
+          </div>
+          <div class="seo-cell seo-inline">
+            <div class="mini-label">SSL / HTTPS</div>
+            <div class="seo-value">
+              <span class="status-fail">–</span>
+              Not Enabled — Risk
+            </div>
+          </div>
+          <div class="seo-cell seo-inline">
+            <div class="mini-label">Response Time</div>
+            <div class="seo-value"><span class="muted">Not measured</span></div>
+          </div>
+          <div class="seo-cell seo-inline">
+            <div class="mini-label">Contact Page</div>
+            <div class="seo-value">
+              <span class="status-fail">–</span>
+              Not found
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFORMANCE -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">⚡</span> Performance Overview</div>
+      <div class="card">
+        
+      <div class="score-bar-row">
+        <div class="score-bar-label">
+          <span class="score-bar-icon">📱</span>
+          <span>Responsive Score</span>
+        </div>
+        <div class="score-bar-right">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:0%;background:#94A3B8;"></div>
+          </div>
+          <span class="score-bar-value" style="color:#94A3B8;">0</span>
+        </div>
+      </div>
+    
+        
+      <div class="score-bar-row">
+        <div class="score-bar-label">
+          <span class="score-bar-icon">🎨</span>
+          <span>UI / UX Quality</span>
+        </div>
+        <div class="score-bar-right">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:0%;background:#94A3B8;"></div>
+          </div>
+          <span class="score-bar-value" style="color:#94A3B8;">0</span>
+        </div>
+      </div>
+    
+        
+      <div class="score-bar-row">
+        <div class="score-bar-label">
+          <span class="score-bar-icon">📲</span>
+          <span>Mobile Experience</span>
+        </div>
+        <div class="score-bar-right">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:0%;background:#94A3B8;"></div>
+          </div>
+          <span class="score-bar-value" style="color:#94A3B8;">0</span>
+        </div>
+      </div>
+    
+        
+      <div class="score-bar-row">
+        <div class="score-bar-label">
+          <span class="score-bar-icon">🎯</span>
+          <span>Lead Score</span>
+        </div>
+        <div class="score-bar-right">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:85%;background:#059669;"></div>
+          </div>
+          <span class="score-bar-value" style="color:#059669;">85</span>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  
+  
+    <!-- BUSINESS INTELLIGENCE -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">📊</span> Business Intelligence</div>
+
+      <div class="scores-trio">
+        <div class="trio-card" style="background:#FFFBEB;border-color:#FDE68A;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#D97706" stroke-width="6"
+        stroke-dasharray="94.24777960769379 94.24777960769379" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#D97706;">50</div>
+            </div>
+          </div>
+          <div class="trio-label">Trust Score</div>
+          <div class="trio-sub" style="color:#D97706;">Average</div>
+        </div>
+        <div class="trio-card" style="background:#FEF2F2;border-color:#FECACA;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#DC2626" stroke-width="6"
+        stroke-dasharray="30.159289474462014 158.33626974092556" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#DC2626;">16</div>
+            </div>
+          </div>
+          <div class="trio-label">Quality Score</div>
+          <div class="trio-sub" style="color:#DC2626;">Critical</div>
+        </div>
+        <div class="trio-card" style="background:#FFFBEB;border-color:#FDE68A;">
+          <div class="ring-wrap">
+            
+    <svg width="72" height="72" viewBox="0 0 72 72" style="transform:rotate(-90deg);">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#EEF2FF" stroke-width="6"/>
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#D97706" stroke-width="6"
+        stroke-dasharray="141.37166941154067 47.12388980384691" stroke-linecap="round"/>
+    </svg>
+  
+            <div class="ring-inner">
+              <div class="ring-val" style="color:#D97706;">75</div>
+            </div>
+          </div>
+          <div class="trio-label">Opportunity</div>
+          <div class="trio-sub" style="color:#D97706;">Good</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">Opportunity Assessment</div>
+          
+            <div style="margin-bottom:10px;">
+              <span class="mini-label">Level: </span>
+              <span class="opp-badge opp-high">HIGH</span>
+            </div>
+          
+          <p class="body-text">Strong redesign candidate with 5 major improvement areas. High-value opportunity for comprehensive website modernization.</p>
+          
+            <div class="mini-label" style="margin-top:12px;margin-bottom:6px;">Key Reasons</div>
+            <ul class="bullet-list blue">
+              <li>Poor SEO optimization</li><li>Outdated website design</li><li>Not mobile-responsive</li><li>No SSL certificate</li><li>Overall low quality</li><li>Low website quality score indicates need for redesign</li>
+            </ul>
+          
+        </div>
+
+        <div class="card">
+          <div class="card-title">Digital Potential</div>
+          <div class="potential-list">
+            <div class="potential-row">
+              <span class="potential-label">Redesign</span>
+              <span class="potential-value">Design analysis available upon audit</span>
+            </div>
+            <div class="potential-row">
+              <span class="potential-label">SEO</span>
+              <span class="potential-value">SEO analysis available upon audit</span>
+            </div>
+            <div class="potential-row">
+              <span class="potential-label">Digital Marketing</span>
+              <span class="potential-value">Digital marketing analysis available upon audit</span>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">Social Presence</div>
+          <div class="checks-grid">
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">Instagram</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">Facebook</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">LinkedIn</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">YouTube</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-fail">✗</span>
+      <div class="check-body">
+        <span class="check-label">WhatsApp</span>
+        
+      </div>
+    </div>
+  
+          </div>
+          
+            <div class="divider-thin"></div>
+            <div class="potential-row">
+              <span class="potential-label">Social Score</span>
+              <span class="potential-value" style="color:#059669;font-weight:700;">85/100</span>
+            </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Contact Audit</div>
+          <div class="checks-grid">
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">Phone Detected</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">Email Detected</span>
+        
+      </div>
+    </div>
+  
+            
+    <div class="check-row">
+      <span class="check-icon status-pass">✓</span>
+      <div class="check-body">
+        <span class="check-label">Contact Form</span>
+        
+      </div>
+    </div>
+  
+          </div>
+          <div class="divider-thin"></div>
+          <div class="potential-row">
+            <span class="potential-label">Contact Methods</span>
+            <span class="potential-value">3</span>
+          </div>
+          
+            <div class="divider-thin"></div>
+            <div class="mini-label" style="margin-bottom:4px;">Website Freshness</div>
+            <div class="potential-row">
+              <span class="potential-label">Status</span>
+              <span class="potential-value"><strong>fresh</strong></span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <div class="card recommendation-card">
+        <div class="rec-icon">💡</div>
+        <div>
+          <div class="card-title" style="color:#1E3A5F;margin-bottom:6px;">AI Recommendation</div>
+          <p class="body-text" style="color:#1E3A5F;">This business has 4 critical areas for improvement including Poor search engine visibility, Outdated or non-responsive design, Security concerns - no HTTPS. Strong candidate for comprehensive SEO Optimization + Website Redesign services with high ROI potential.</p>
+        </div>
+      </div>
+    </div>
+  
+  
+    <!-- OUTREACH -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">✉️</span> Outreach Suggestions</div>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">📧 Cold Email Draft</div>
+          <p class="muted-block">Generate outreach content to view email suggestions tailored to this lead.</p>
+          
+        </div>
+        <div class="card">
+          <div class="card-title">💬 WhatsApp Message</div>
+          <p class="muted-block">Generate outreach content to view WhatsApp message suggestions.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🎯 Suggested Pitch Angles</div>
+        <div class="pitch-list">
+          
+          
+          
+          
+          <div class="pitch-item">
+            <div class="pitch-tag">Local SEO</div>
+            <div class="pitch-text">Help them dominate local search results with hyper-targeted local SEO campaigns.</div>
+          </div>
+          <div class="pitch-item">
+            <div class="pitch-tag">Lead Generation</div>
+            <div class="pitch-text">Offer industry-specific lead generation services to bring qualified prospects to their doorstep.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <!-- AI RECOMMENDATIONS -->
+    <div class="section">
+      <div class="section-header"><span class="section-icon">🤖</span> AI Recommendations</div>
+
+      <div class="reco-grid">
+        <div class="reco-card reco-red">
+          <div class="reco-num">01</div>
+          <div class="reco-card-title">What's Missing</div>
+          <p class="body-text">
+            The website has reasonable digital presence but there are clear opportunities for improvement across multiple dimensions.
+          </p>
+        </div>
+
+        <div class="reco-card reco-amber">
+          <div class="reco-num">02</div>
+          <div class="reco-card-title">Why Improvement is Urgent</div>
+          <p class="body-text">
+            Regular improvements to design, performance, and SEO are necessary to stay competitive in today's digital-first landscape.
+          </p>
+        </div>
+
+        <div class="reco-card reco-green">
+          <div class="reco-num">03</div>
+          <div class="reco-card-title">How Conversions Will Improve</div>
+          <ul class="bullet-list green" style="margin-top:8px;">
+            
+              <li>Improve page load speed to reduce bounce rates significantly</li>
+              <li>Add clear calls-to-action above the fold on every page</li>
+              <li>Optimise mobile experience for on-the-go conversions</li>
+            
+            <li>Implement live chat or chatbot for instant customer engagement</li>
+            <li>Add social proof elements like testimonials and case studies</li>
+          </ul>
+        </div>
+
+        
+        <div class="reco-card reco-blue">
+          <div class="reco-num">04</div>
+          <div class="reco-card-title">Why a Redesign is Needed</div>
+          <p class="body-text">
+            The website quality score indicates significant room for improvement in design, usability, and UX. A modern redesign would enhance aesthetics, load times, and conversion rates simultaneously.
+          </p>
+        </div>
+
+        <div class="reco-card reco-purple">
+          <div class="reco-num">05</div>
+          <div class="reco-card-title">Why SEO is Essential</div>
+          <p class="body-text">
+            SEO is essential for any business wanting to be found online. Even foundational SEO improvements lead to measurable increases in organic visibility and qualified leads.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-mark">OM</div>
+        <div>
+          <div class="footer-brand-name">Opti Matrix Solutions</div>
+          <div class="footer-brand-sub">Digital Growth & Web Intelligence Agency</div>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <div>This audit was prepared exclusively by Opti Matrix Solutions</div>
+        <div>All analysis, scores, and recommendations are proprietary</div>
+        <div>© 2026 Opti Matrix Solutions. All rights reserved.</div>
+      </div>
+    </div>
+    <div class="footer-disclamer">
+      Report ID: OMS-MQIZG00Z | Generated for: Orbit Web Solution | 18 June 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

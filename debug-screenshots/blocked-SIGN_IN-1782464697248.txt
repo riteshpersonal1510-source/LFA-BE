@@ -1,0 +1,5 @@
+Label: blocked-SIGN_IN
+URL: https://www.google.com/maps/search/Gym%20in%20New%20York%20Street%20Newfane%20New%20York%20New%20York%20Street%2C%20Newfane%2C%20New%20York
+Title: Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-26T09:04:57.248Z

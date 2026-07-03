@@ -1,0 +1,5 @@
+Label: blocked-mid-collection
+URL: https://www.google.com/maps/search/Gym+in+New+York+Street+Newfane+New+York+New+York+Street,+Newfane,+New+York/@41.8822361,-76.2922759,8z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D
+Title: Gym in New York Street Newfane New York New York Street, Newfane, New York - Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-26T09:05:20.572Z

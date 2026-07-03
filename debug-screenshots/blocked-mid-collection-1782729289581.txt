@@ -1,0 +1,5 @@
+Label: blocked-mid-collection
+URL: https://www.google.com/maps/search/Gym+in+Karachi,+Sindh,+Pakistan/@24.8662994,67.0332849,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D
+Title: Gym in Karachi, Sindh, Pakistan - Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-29T10:34:49.581Z

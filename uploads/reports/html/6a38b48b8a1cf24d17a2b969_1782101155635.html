@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Audit Report - UPF - the GYM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:#F9FAFB;
+      color:#111827;
+      font-size:12px;
+      line-height:1.6;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    .page{max-width:1280px;margin:0 auto;padding:32px 40px}
+
+    .ah{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;margin-bottom:24px}
+    .ah-l{display:flex;align-items:center;gap:10px}
+    .ah-m{width:28px;height:28px;background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+    .ah-n{font-size:13px;font-weight:700;color:#0F172A}
+    .ah-s{font-size:9px;color:#64748B}
+    .ah-r{text-align:right}
+    .ah-id{font-size:9px;font-weight:600;color:#4F46E5;letter-spacing:.06em;text-transform:uppercase}
+    .ah-d{font-size:9px;color:#64748B;margin-top:1px}
+
+    .hero{padding:32px 0 24px;border-bottom:1px solid #E5E7EB;margin-bottom:28px}
+    .hero-t{font-size:9px;font-weight:600;color:#9CA3AF;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+    .hero-n{font-size:28px;font-weight:700;color:#0F172A;letter-spacing:-.03em;line-height:1.15;margin-bottom:6px}
+    .hero-s{font-size:12px;color:#6B7280;margin-bottom:14px}
+    .hero-m{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .hero-r{display:flex;gap:20px;margin-top:16px}
+    .hero-sc{text-align:center}
+    .hero-sc-v{font-size:22px;font-weight:700;line-height:1;letter-spacing:-.04em}
+    .hero-sc-l{font-size:9px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+
+    .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:600}
+    .tag-green{background:#ECFDF5;color:#059669}
+    .tag-amber{background:#FFFBEB;color:#D97706}
+    .tag-red{background:#FEF2F2;color:#DC2626}
+    .tag-high{background:#ECFDF5;color:#059669}
+    .tag-medium{background:#FFFBEB;color:#D97706}
+    .tag-low{background:#FEF2F2;color:#DC2626}
+
+    .badge{display:inline-block;padding:2px 10px;border-radius:12px;background:#EFF6FF;color:#1D4ED8;font-size:10px;font-weight:500}
+    .badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+
+    .sec{margin-bottom:28px}
+    .sec-h{font-size:15px;font-weight:700;color:#0F172A;letter-spacing:-.01em;padding-bottom:10px;border-bottom:1px solid #E5E7EB;margin-bottom:18px}
+
+    .crd{padding:16px 18px;margin-bottom:12px}
+    .crd-lbl{font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .crd-hr{font-size:12px;font-weight:700;color:#0F172A;margin-bottom:12px}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .grid-2>.crd,.grid-2>.reco{margin-bottom:0}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+
+    .sc-crd{text-align:center;padding:18px 10px 14px}
+    .sc-val{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:4px}
+    .sc-lbl{font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:.07em}
+    .sc-sub{font-size:10px;font-weight:600;margin-top:2px}
+
+    .ch-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+    .ch-row{display:flex;align-items:center;gap:8px;padding:5px 0}
+    .ch-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+    .st-pass{background:#ECFDF5;color:#059669}
+    .st-fail{background:#FEF2F2;color:#DC2626}
+    .st-neutral{background:#F3F4F6;color:#9CA3AF}
+    .ch-label{font-size:11px;color:#374151}
+    .ch-note{font-size:9px;color:#9CA3AF;display:block;margin-left:26px;margin-top:-2px}
+
+    .sb-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .sb-label{font-size:11px;font-weight:500;color:#374151;display:flex;align-items:center;gap:6px;min-width:120px}
+    .sb-icon{font-size:12px}
+    .sb-right{flex:1;display:flex;align-items:center;gap:8px}
+    .sb-track{flex:1;height:6px;background:#F3F4F6;border-radius:99px;overflow:hidden}
+    .sb-fill{height:100%;border-radius:99px}
+    .sb-val{font-size:11px;font-weight:700;min-width:24px;text-align:right}
+
+    .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:10px;background:#EEF2FF;color:#4F46E5;font-size:9px;font-weight:700;padding:0 6px;margin-left:6px;vertical-align:middle}
+    .iss{padding:6px 0;border-bottom:1px solid #F3F4F6}
+    .iss:last-child{border-bottom:none}
+    .iss-d{font-size:11px;color:#111827;font-weight:500}
+    .iss-t{font-size:9px;color:#9CA3AF;margin-top:1px}
+    .sev-high .iss-d{color:#DC2626}
+    .sev-medium .iss-d{color:#D97706}
+    .sev-low .iss-d{color:#6B7280}
+
+    .seo-val{font-size:11px;color:#374151;margin-top:2px;word-break:break-word}
+
+    .lst{padding-left:18px}
+    .lst li{font-size:11px;line-height:1.6;margin-bottom:3px}
+    .lst-red li{color:#7F1D1D}
+    .lst-green li{color:#065F46}
+    .lst-blue li{color:#1E3A8A}
+
+    .pot-list{display:flex;flex-direction:column}
+    .pot-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #F3F4F6}
+    .pot-row:last-child{border-bottom:none}
+    .pot-lbl{font-size:10px;font-weight:600;color:#6B7280;flex-shrink:0}
+    .pot-val{font-size:11px;color:#374151;text-align:right}
+
+    .hr{border:none;border-top:1px solid #F3F4F6;margin:8px 0}
+
+    .ai-crd{background:#F8FAFC}
+
+    .reco-crd{background:#F8FAFC;border-left:3px solid #4F46E5}
+    .alert-amber{border-radius:8px;padding:12px 14px;margin-bottom:12px;background:#FFFBEB;border:1px solid #FDE68A}
+    .alert-title{font-size:11px;font-weight:700;color:#92400E;margin-bottom:3px}
+    .alert-body{font-size:10px;color:#78350F;line-height:1.5}
+
+    .reco{padding:14px 14px 12px;border-left:3px solid}
+    .reco-red{border-left-color:#DC2626}
+    .reco-amber{border-left-color:#D97706}
+    .reco-green{border-left-color:#059669}
+    .reco-blue{border-left-color:#2563EB}
+    .reco-purple{border-left-color:#7C3AED}
+    .reco-title{font-size:11px;font-weight:700;color:#0F172A;margin-bottom:6px}
+
+    .body{font-size:11px;color:#4B5563;line-height:1.6}
+    .dim{font-size:11px;color:#9CA3AF;font-style:italic}
+
+    .out-box{background:#F8FAFC;border:1px solid #E5E7EB;border-radius:8px;padding:12px 14px;font-size:10px;line-height:1.5;color:#4B5563;white-space:pre-wrap;max-height:160px;overflow:hidden}
+    .wa-box{background:#F0FDF4;border-color:#BBF7D0}
+
+    .pch-list{display:flex;flex-direction:column;gap:6px}
+    .pch-item{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #F3F4F6}
+    .pch-item:last-child{border-bottom:none}
+    .pch-tag{flex-shrink:0;font-size:9px;font-weight:700;background:#EEF2FF;color:#4F46E5;border-radius:6px;padding:3px 8px;text-transform:uppercase;letter-spacing:.04em;min-width:80px;text-align:center}
+    .pch-txt{font-size:10px;color:#374151;line-height:1.5}
+
+    .ft{margin-top:36px;padding-top:16px;border-top:1px solid #E5E7EB}
+    .ft-in{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .ft-br{display:flex;align-items:center;gap:8px}
+    .ft-lm{width:22px;height:22px;background:linear-gradient(135deg,#4F46E5,#7C3AED);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+    .ft-bn{font-size:11px;font-weight:700;color:#0F172A}
+    .ft-bs{font-size:8px;color:#6B7280}
+    .ft-ct{text-align:right;font-size:8px;color:#6B7280;line-height:1.6}
+    .ft-d{font-size:8px;color:#9CA3AF;text-align:center;padding-top:8px;margin-top:8px;border-top:1px solid #F3F4F6}
+
+    @media print{body{background:#fff}}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="ah">
+    <div class="ah-l">
+      <div class="ah-m">OM</div>
+      <div>
+        <div class="ah-n">Opti Matrix Solutions</div>
+        <div class="ah-s">Digital Growth & Web Intelligence Agency</div>
+      </div>
+    </div>
+    <div class="ah-r">
+      <div class="ah-id">Report #OMS-MQOP0K6P</div>
+      <div class="ah-d">22 June 2026</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-t">Website Audit Report</div>
+    <div class="hero-n">UPF - the GYM</div>
+    <div class="hero-s">Professional Digital Presence Analysis by Opti Matrix Solutions</div>
+    <div class="hero-m">
+      <span class="tag tag-green">Standalone Website</span>
+      <span class="tag tag-green">Fitness center</span>
+      <span class="tag tag-green">★ 4.7 (0 reviews)</span>
+    </div>
+    <div class="hero-r">
+      <div class="hero-sc">
+        <div class="hero-sc-v" style="color:#D97706;">75</div>
+        <div class="hero-sc-l">Audit Score</div>
+      </div>
+      <div class="hero-sc">
+        <div class="hero-sc-v" style="color:#059669;">85</div>
+        <div class="hero-sc-l">Opportunity</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:28px;">
+    <div style="font-size:16px;font-weight:700;color:#0F172A;letter-spacing:-.02em;margin-bottom:8px;">UPF - the GYM</div>
+    <span class="tag tag-green">Standalone Website</span>
+    <div class="grid-2" style="margin-top:12px;gap:16px 28px;">
+      <div><div class="crd-lbl">Address</div><div class="body">sahitya icon, above Blue Buddha Store, Vasant Vihar 2, Nava Naroda, Ahmedabad, Gujarat 382330</div></div>
+      <div><div class="crd-lbl">Phone</div><div class="body">9227001415</div></div>
+      
+      <div><div class="crd-lbl">Rating</div><div class="body">★★★★★ 4.7</div></div>
+      
+      <div style="grid-column:1/-1;"><div class="crd-lbl">Website</div><div class="body" style="word-break:break-all;">https://theupf.in</div></div>
+    </div>
+  </div>
+
+  
+  
+    <div class="sec">
+      <div class="sec-h">Responsive & UI/UX Audit</div>
+      <div class="grid-4">
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#D97706;">75</div>
+          <div class="sc-lbl">Responsive</div>
+          <div class="sc-sub" style="color:#D97706;">Good</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#DC2626;">0</div>
+          <div class="sc-lbl">UI / UX</div>
+          <div class="sc-sub" style="color:#DC2626;">Critical</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#DC2626;">40</div>
+          <div class="sc-lbl">Mobile</div>
+          <div class="sc-sub" style="color:#DC2626;">Poor</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#D97706;">75</div>
+          <div class="sc-lbl">Overall</div>
+          <div class="sc-sub" style="color:#D97706;">Good</div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="crd">
+          <div class="crd-lbl">Responsive Checks</div>
+          <div class="ch-grid-2">
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Mobile Friendly</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Responsive Layout</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-pass">✓</span>
+      <span class="ch-label">Viewport Meta</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Touch Friendly</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-pass">✓</span>
+      <span class="ch-label">Font Readability</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-pass">✓</span>
+      <span class="ch-label">No Horizontal Scroll</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-pass">✓</span>
+      <span class="ch-label">No Overflow</span>
+      
+    </div>
+  
+          </div>
+        </div>
+        
+        <div class="crd">
+          <div class="crd-lbl">UI/UX Issues <span class="count">9</span></div>
+          
+            <div class="iss sev-warning">
+              <div class="iss-d">Inconsistent alignment detected in container</div>
+              <div class="iss-t">alignment</div>
+            </div>
+          
+            <div class="iss sev-warning">
+              <div class="iss-d">Multiple overlapping elements detected (587 overlaps)</div>
+              <div class="iss-t">overlap</div>
+            </div>
+          
+            <div class="iss sev-info">
+              <div class="iss-d">Many elements have insufficient spacing</div>
+              <div class="iss-t">spacing</div>
+            </div>
+          
+            <div class="iss sev-warning">
+              <div class="iss-d">Inconsistent alignment detected in container</div>
+              <div class="iss-t">alignment</div>
+            </div>
+          
+            <div class="iss sev-critical">
+              <div class="iss-d">Button too small or collapsed</div>
+              <div class="iss-t">broken-button</div>
+            </div>
+          
+            <div class="iss sev-critical">
+              <div class="iss-d">Button is hidden</div>
+              <div class="iss-t">broken-button</div>
+            </div>
+          
+            <div class="iss sev-warning">
+              <div class="iss-d">Multiple overlapping elements detected (578 overlaps)</div>
+              <div class="iss-t">overlap</div>
+            </div>
+          
+            <div class="iss sev-info">
+              <div class="iss-d">Many elements have insufficient spacing</div>
+              <div class="iss-t">spacing</div>
+            </div>
+          
+            <div class="iss sev-warning">
+              <div class="iss-d">6 touch targets smaller than 44x44px</div>
+              <div class="iss-t">touch-target</div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h">SEO Intelligence</div>
+      <div class="grid-2">
+        <div class="crd">
+          <div class="crd-lbl">Meta Title</div>
+          <div class="seo-val"><span class="dim">Not detected</span></div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">Meta Description</div>
+          <div class="seo-val"><span class="dim">Not detected</span></div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">SSL / HTTPS</div>
+          <div class="seo-val">
+            <span class="st-fail">–</span>
+            Not Secure
+          </div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">Response Time</div>
+          <div class="seo-val"><span class="dim">Not measured</span></div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">Contact Page</div>
+          <div class="seo-val">
+            <span class="st-fail">–</span>
+            Not found
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h">Performance Overview</div>
+      <div class="crd">
+        
+      <div class="sb-row">
+        <div class="sb-label">
+          <span class="sb-icon">📱</span>
+          <span>Responsive Score</span>
+        </div>
+        <div class="sb-right">
+          <div class="sb-track">
+            <div class="sb-fill" style="width:75%;background:#D97706;"></div>
+          </div>
+          <span class="sb-val" style="color:#D97706;">75</span>
+        </div>
+      </div>
+    
+        
+      <div class="sb-row">
+        <div class="sb-label">
+          <span class="sb-icon">🎨</span>
+          <span>UI / UX Quality</span>
+        </div>
+        <div class="sb-right">
+          <div class="sb-track">
+            <div class="sb-fill" style="width:0%;background:#DC2626;"></div>
+          </div>
+          <span class="sb-val" style="color:#DC2626;">0</span>
+        </div>
+      </div>
+    
+        
+      <div class="sb-row">
+        <div class="sb-label">
+          <span class="sb-icon">📲</span>
+          <span>Mobile Experience</span>
+        </div>
+        <div class="sb-right">
+          <div class="sb-track">
+            <div class="sb-fill" style="width:40%;background:#DC2626;"></div>
+          </div>
+          <span class="sb-val" style="color:#DC2626;">40</span>
+        </div>
+      </div>
+    
+        
+      <div class="sb-row">
+        <div class="sb-label">
+          <span class="sb-icon">🎯</span>
+          <span>Lead Score</span>
+        </div>
+        <div class="sb-right">
+          <div class="sb-track">
+            <div class="sb-fill" style="width:85%;background:#059669;"></div>
+          </div>
+          <span class="sb-val" style="color:#059669;">85</span>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  
+  
+    <div class="sec">
+      <div class="sec-h">Business Intelligence</div>
+      <div class="grid-4">
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#DC2626;">40</div>
+          <div class="sc-lbl">Trust</div>
+          <div class="sc-sub" style="color:#DC2626;">Poor</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#DC2626;">21</div>
+          <div class="sc-lbl">Quality</div>
+          <div class="sc-sub" style="color:#DC2626;">Critical</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#059669;">85</div>
+          <div class="sc-lbl">Opportunity</div>
+          <div class="sc-sub" style="color:#059669;">Excellent</div>
+        </div>
+        <div class="sc-crd">
+          <div class="sc-val" style="color:#DC2626;">0</div>
+          <div class="sc-lbl">Social</div>
+          <div class="sc-sub" style="color:#DC2626;">Critical</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="crd">
+          <div class="crd-lbl">Opportunity Assessment</div>
+          <div class="tag tag-high" style="margin-bottom:10px;">HIGH</div>
+          <p class="body">Strong redesign candidate with 6 major improvement areas. High-value opportunity for comprehensive website modernization.</p>
+          
+            <div class="crd-lbl" style="margin-top:12px;">Key Reasons</div>
+            <ul class="lst lst-blue">
+              <li>Poor SEO optimization</li><li>Outdated website design</li><li>Weak social media presence</li><li>No SSL certificate</li><li>Low trust score</li><li>Overall low quality</li>
+            </ul>
+          
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">Digital Potential</div>
+          <div class="pot-list">
+            <div class="pot-row"><span class="pot-lbl">Redesign</span><span class="pot-val">Moderate redesign opportunity - visual refresh would help</span></div>
+            <div class="pot-row"><span class="pot-lbl">SEO</span><span class="pot-val">High SEO opportunity - website can achieve strong organic rankings</span></div>
+            <div class="pot-row"><span class="pot-lbl">Digital Marketing</span><span class="pot-val">Strong digital marketing opportunity identified</span></div>
+            <div class="pot-row"><span class="pot-lbl">Conversion</span><span class="pot-val">medium</span></div>
+            <div class="pot-row"><span class="pot-lbl">Revenue Potential</span><span class="pot-val">low</span></div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+      <div class="grid-2">
+        <div class="crd">
+          <div class="crd-lbl">Social Presence</div>
+          <div class="ch-grid-2">
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Instagram</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Facebook</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">LinkedIn</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">YouTube</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">WhatsApp</span>
+      
+    </div>
+  
+          </div>
+          <div class="hr"></div><div class="pot-row"><span class="pot-lbl">Social Score</span><span class="pot-val" style="color:#DC2626;font-weight:700;">0/100</span></div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">Contact Audit</div>
+          <div class="ch-grid-2">
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Phone Detected</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-fail">✗</span>
+      <span class="ch-label">Email Detected</span>
+      
+    </div>
+  
+            
+    <div class="ch-row">
+      <span class="ch-icon st-pass">✓</span>
+      <span class="ch-label">Contact Form</span>
+      
+    </div>
+  
+          </div>
+          <div class="hr"></div>
+          <div class="pot-row"><span class="pot-lbl">Contact Methods</span><span class="pot-val">1</span></div>
+          
+            <div class="hr"></div>
+            <div class="crd-lbl" style="margin-bottom:4px;">Website Freshness</div>
+            <div class="pot-row"><span class="pot-lbl">Status</span><span class="pot-val"><strong>moderate</strong></span></div>
+            <div class="pot-row"><span class="pot-lbl">Copyright Year</span><span class="pot-val">2025</span></div>
+          
+        </div>
+      </div>
+
+      <div class="crd reco-crd">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <div class="crd-lbl">AI Recommendation</div>
+            <p class="body" style="color:#1E3A5F;">This business has 6 critical areas for improvement including Poor search engine visibility, Outdated or non-responsive design, Limited social media engagement. Strong candidate for comprehensive SEO Optimization + Website Redesign services with high ROI potential.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="sec">
+      <div class="sec-h">Outreach Suggestions</div>
+      <div class="grid-2">
+        <div class="crd">
+          <div class="crd-lbl">Cold Email Draft</div>
+          
+            <div class="out-box">
+              Hi UPF - the GYM Team,
+We analyzed your website and identified several opportunities for improvement:
+• Weak mobile responsiveness
+• Non-responsive layout design
+• Below average UI/UX quality
+On the positive side, your business has: strong customer ratings.
+We can help you with:
+✅ Modern website redesign with responsive layout
+✅ Mobile performance optimization
+✅ Improved user experience &amp; conversion optimization
+✅ SEO-friendly architecture
+Would you like a free consultation to discuss how we can transform your digital presence?
+Looking forward to hearing from you,
+LeadFinder Pro Team
+            </div>
+          
+          <div class="hr"></div><div class="pot-row"><span class="pot-lbl">Outreach Probability</span><span class="pot-val"><strong>medium</strong></span></div>
+        </div>
+        <div class="crd">
+          <div class="crd-lbl">WhatsApp Message</div>
+          
+            <div class="out-box wa-box">
+              Hi UPF - the GYM 👋
+
+We reviewed your website and found mobile responsiveness needs improvement.
+
+Would you like a free website audit report? We&#39;ll show you exactly how to improve your online presence.
+
+Let us know if you&#39;re interested!
+            </div>
+          
+        </div>
+      </div>
+      <div class="crd">
+        <div class="crd-lbl">Suggested Pitch Angles</div>
+        <div class="pch-list">
+          
+          
+          <div class="pch-item"><div class="pch-tag">SEO Services</div><div class="pch-txt">Strong opportunity for organic growth through SEO optimization and keyword strategy.</div></div>
+          
+          <div class="pch-item"><div class="pch-tag">Local SEO</div><div class="pch-txt">Help them dominate local search results with hyper-targeted local SEO campaigns.</div></div>
+          <div class="pch-item"><div class="pch-tag">Lead Generation</div><div class="pch-txt">Offer industry-specific lead generation services to bring qualified prospects to their doorstep.</div></div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="sec">
+      <div class="sec-h">AI Recommendations</div>
+      <div class="grid-2">
+        <div class="reco reco-red">
+          <div class="reco-title">What's Missing</div>
+          <p class="body">
+            The website has reasonable digital presence but there are clear opportunities for improvement across multiple dimensions.
+          </p>
+        </div>
+        <div class="reco reco-amber">
+          <div class="reco-title">Why Improvement is Urgent</div>
+          <p class="body">
+            With over 60% of web traffic coming from mobile devices, a non-mobile-friendly website is actively driving away potential customers every day.
+          </p>
+        </div>
+        <div class="reco reco-green">
+          <div class="reco-title">How Conversions Will Improve</div>
+          <ul class="lst lst-green" style="margin-top:6px;">
+            
+              <li>Improve page load speed to reduce bounce rates significantly</li>
+              <li>Add clear calls-to-action above the fold on every page</li>
+              <li>Optimise mobile experience for on-the-go conversions</li>
+            
+            <li>Implement live chat or chatbot for instant customer engagement</li>
+            <li>Add social proof elements like testimonials and case studies</li>
+          </ul>
+        </div>
+        
+        <div class="reco reco-blue">
+          <div class="reco-title">Why a Redesign is Needed</div>
+          <p class="body">
+            The website quality score indicates significant room for improvement in design, usability, and UX. A modern redesign would enhance aesthetics, load times, and conversion rates simultaneously.
+          </p>
+        </div>
+        <div class="reco reco-purple">
+          <div class="reco-title">Why SEO is Essential</div>
+          <p class="body">
+            Strong SEO opportunity identified. Proper optimisation can drive consistent organic traffic, reduce acquisition costs, and build long-term digital assets with compounding returns.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="ft">
+    <div class="ft-in">
+      <div class="ft-br">
+        <div class="ft-lm">OM</div>
+        <div>
+          <div class="ft-bn">Opti Matrix Solutions</div>
+          <div class="ft-bs">Digital Growth & Web Intelligence Agency</div>
+        </div>
+      </div>
+      <div class="ft-ct">
+        <div>Prepared exclusively by Opti Matrix Solutions</div>
+        <div>All analysis, scores, and recommendations are proprietary</div>
+        <div>© 2026 Opti Matrix Solutions. All rights reserved.</div>
+      </div>
+    </div>
+    <div class="ft-d">
+      Report ID: OMS-MQOP0K6P | Generated for: UPF - the GYM | 22 June 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

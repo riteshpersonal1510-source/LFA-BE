@@ -1,0 +1,5 @@
+Label: navigation-verify-failed
+URL: https://www.google.com/maps/search/Gym%20in%20Surat%20Gujarat%20India%20Surat%2C%20Gujarat%2C%20India
+Title: Google Maps
+Type: NAV_VERIFY_FAIL
+Timestamp: 2026-06-29T05:07:55.257Z

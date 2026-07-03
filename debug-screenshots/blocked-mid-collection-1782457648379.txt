@@ -1,0 +1,5 @@
+Label: blocked-mid-collection
+URL: https://www.google.com/maps/search/school+in+Ginza+Chiyoda-ku+Tokyo+Ginza,+Chiyoda-ku,+Tokyo/@35.6808419,139.7565941,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D
+Title: school in Ginza Chiyoda-ku Tokyo Ginza, Chiyoda-ku, Tokyo - Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-26T07:07:28.379Z

@@ -1,0 +1,1 @@
+{"version":3,"file":"redesign-proposal-engine.d.ts","sourceRoot":"","sources":["../../src/ai-outreach/redesign-proposal-engine.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AACnE,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,qBAAa,sBAAuB,SAAQ,iBAAiB;IAC3D,gBAAgB,CAAC,IAAI,EAAE,SAAS,GAAG,iBAAiB;CAGrD;AAED,eAAO,MAAM,sBAAsB,wBAA+B,CAAC"}

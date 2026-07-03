@@ -1,0 +1,5 @@
+Label: blocked-mid-collection
+URL: https://www.google.com/maps/search/gym+in+Naroda+Ahmedabad+Gujarat+Naroda,+Ahmedabad,+Gujarat/@23.0686252,72.6530967,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D
+Title: gym in Naroda Ahmedabad Gujarat Naroda, Ahmedabad, Gujarat - Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-26T06:53:03.574Z

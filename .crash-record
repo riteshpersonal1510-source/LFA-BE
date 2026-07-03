@@ -1,0 +1,21 @@
+{
+  "type": "Uncaught Exception",
+  "timestamp": "2026-06-29T09:52:07.618Z",
+  "crashCount": 23,
+  "uptime": 19.79494127,
+  "memory": {
+    "rss": "208MB",
+    "heapTotal": "125MB",
+    "heapUsed": "90MB",
+    "external": "28MB"
+  },
+  "nodeVersion": "v26.3.1",
+  "platform": "linux",
+  "arch": "x64",
+  "env": "production",
+  "error": {
+    "name": "Error",
+    "message": "write EPIPE",
+    "stack": "Error: write EPIPE\n    at process.target._send (node:internal/child_process:884:20)\n    at process.target.send (node:internal/child_process:759:19)\n    at Object.exports.send (/run/media/ritesh/Project Data/MERN Project/Local Live Lead Finder/Leads-AI-Agent/node_modules/ts-node-dev/lib/ipc.js:17:14)\n    at /run/media/ritesh/Project Data/MERN Project/Local Live Lead Finder/Leads-AI-Agent/node_modules/ts-node-dev/lib/wrap.js:88:9\n    at Object.nodeDevHook [as .js] (/run/media/ritesh/Project Data/MERN Project/Local Live Lead Finder/Leads-AI-Agent/node_modules/ts-node-dev/lib/hook.js:61:17)\n    at Module.load (node:internal/modules/cjs/loader:1596:32)\n    at Module._load (node:internal/modules/cjs/loader:1398:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.require (node:internal/modules/cjs/loader:1619:12)"
+  }
+}

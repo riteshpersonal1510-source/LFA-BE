@@ -1,0 +1,12 @@
+2026-06-26T11:41:33.751Z | STEP 1: LAUNCH BROWSER & SEARCH
+2026-06-26T11:41:39.186Z | Navigating to Google Maps and searching for: "Marshal GYM - Naroda in Ahmedabad"
+
+❌ ERROR: page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+[2m  - navigating to "https://www.google.com/maps", waiting until "networkidle"[22m
+
+page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+[2m  - navigating to "https://www.google.com/maps", waiting until "networkidle"[22m
+
+    at runVerification (/run/media/ritesh/Project Data/MERN Project/Local Live Lead Finder/Leads-AI-Agent/backend/runtime-verification.mjs:79:16)

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Audit Report - Mahalaxmi Hangar Mart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page { margin: 20px; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F8F7F4;
+      color: #18181B;
+      margin: 0;
+      padding: 32px;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page { max-width: 800px; margin: 0 auto; }
+    .section { margin-bottom: 32px; }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #18181B;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2563EB;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+    }
+    .status-pass { color: #16A34A; font-weight: 700; }
+    .status-fail { color: #DC2626; font-weight: 700; }
+    .scores-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .score-card {
+      text-align: center;
+      padding: 16px;
+      background: #FAFAF8;
+      border-radius: 10px;
+      border: 1px solid #E5E7EB;
+    }
+    .score-value {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .score-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #8E8C86;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .issue-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #F3F4F6;
+      font-size: 13px;
+    }
+    .issue-item:last-child { border-bottom: none; }
+    .severity-high { color: #DC2626; }
+    .severity-medium { color: #F59E0B; }
+    .severity-low { color: #6B7280; }
+    .footer-text { font-size: 11px; color: #B0AEA8; text-align: center; margin-top: 40px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
+    @media print {
+      body { padding: 0; background: white; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- PAGE 1: Executive Summary -->
+    <div class="section">
+      <div style="text-align:center;margin-bottom:32px;padding:40px 24px;background:linear-gradient(135deg,#1E40AF 0%,#2563EB 50%,#3B82F6 100%);border-radius:16px;color:white;">
+        <h1 style="font-size:28px;font-weight:800;margin:0 0 8px;letter-spacing:-0.03em;">Website Audit Report</h1>
+        <p style="font-size:14px;opacity:0.9;margin:0 0 4px;">Professional Digital Presence Analysis</p>
+        <p style="font-size:12px;opacity:0.7;margin:0;">Generated on 16 June 2026</p>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+          <div>
+            <h2 style="margin:0 0 4px;font-size:20px;font-weight:700;">Mahalaxmi Hangar Mart</h2>
+            <div style="margin-top:8px;"><span style="display:inline-block;padding:4px 12px;border-radius:12px;background:#F0FDF4;color:#16A34A;font-size:12px;font-weight:600;">Standalone Website</span></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="text-align:center;">
+              <div style="font-size:36px;font-weight:800;color:#F59E0B;">75</div>
+              <div style="font-size:10px;font-weight:600;color:#8E8C86;text-transform:uppercase;letter-spacing:0.05em;">Audit Score</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:36px;font-weight:800;color:#16A34A;">100</div>
+              <div style="font-size:10px;font-weight:600;color:#8E8C86;text-transform:uppercase;letter-spacing:0.05em;">Opportunity</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid #E5E7EB;">
+          <div><span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Address</span><p style="margin:2px 0;font-size:13px;">
+u-21 indralok market, Chauta Pul, Surat, Gujarat 395003</p></div>
+          <div><span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Category</span><p style="margin:2px 0;font-size:13px;">Grocery store</p></div>
+          <div><span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Phone</span><p style="margin:2px 0;font-size:13px;">9662262994</p></div>
+          
+          <div><span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Rating</span><p style="margin:2px 0;font-size:13px;">★★★★☆ (4)</p></div>
+          
+          <div style="grid-column:1/-1;"><span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Website</span><p style="margin:2px 0;font-size:13px;word-break:break-all;">https://business.google.com/create?fp=11824326005721569637&amp;hl=en&amp;authuser=0&amp;gmbsrc=in-en-et-ip-z-gmb-s-z-l~mrc%7cclaimbz%7cu&amp;ppsrc=gmbmi&amp;utm_campaign=in-en-et-ip-z-gmb-s-z-l~mrc%7cclaimbz%7cu&amp;utm_source=gmb_mrc81&amp;utm_medium=et&amp;getstarted&amp;lis=0</p></div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    
+    <!-- SECTION: Responsive Audit -->
+    <div class="section">
+      <h2 class="section-title">📱 Responsive Audit</h2>
+
+      <div class="scores-row">
+        <div class="score-card">
+          <div class="score-value" style="color:#F59E0B;">75</div>
+          <div class="score-label">Responsive Score</div>
+          <div style="font-size:11px;font-weight:500;color:#F59E0B;margin-top:4px;">Good</div>
+        </div>
+        <div class="score-card">
+          <div class="score-value" style="color:#DC2626;">0</div>
+          <div class="score-label">UI/UX Score</div>
+          <div style="font-size:11px;font-weight:500;color:#DC2626;margin-top:4px;">Critical</div>
+        </div>
+        <div class="score-card">
+          <div class="score-value" style="color:#F59E0B;">55</div>
+          <div class="score-label">Mobile Experience</div>
+          <div style="font-size:11px;font-weight:500;color:#F59E0B;margin-top:4px;">Average</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Responsive Checks</h3>
+        <div class="status-grid">
+          <div class="status-item"><span class="status-fail">✗</span> Mobile Friendly</div>
+          <div class="status-item"><span class="status-fail">✗</span> Responsive Layout</div>
+          <div class="status-item"><span class="status-pass">✓</span> Viewport Meta Tag</div>
+          <div class="status-item"><span class="status-fail">✗</span> Touch Friendly</div>
+          <div class="status-item"><span class="status-pass">✓</span> Font Readability</div>
+          <div class="status-item"><span class="status-pass">✓</span> No Horizontal Scroll</div>
+          <div class="status-item"><span class="status-pass">✓</span> No Overflow Issues</div>
+        </div>
+      </div>
+
+      
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">UI/UX Issues (10)</h3>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">Inconsistent alignment detected in container</div>
+              <div style="font-size:11px;color:#8E8C86;">alignment</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-critical">○</span>
+            <div>
+              <div style="font-weight:500;">Button too small or collapsed</div>
+              <div style="font-size:11px;color:#8E8C86;">broken-button</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">Multiple overlapping elements detected (393 overlaps)</div>
+              <div style="font-size:11px;color:#8E8C86;">overlap</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">No navigation element detected</div>
+              <div style="font-size:11px;color:#8E8C86;">broken-navigation</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-info">○</span>
+            <div>
+              <div style="font-weight:500;">Many elements have insufficient spacing</div>
+              <div style="font-size:11px;color:#8E8C86;">spacing</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-critical">○</span>
+            <div>
+              <div style="font-weight:500;">Button too small or collapsed</div>
+              <div style="font-size:11px;color:#8E8C86;">broken-button</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">Multiple overlapping elements detected (388 overlaps)</div>
+              <div style="font-size:11px;color:#8E8C86;">overlap</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">No navigation element detected</div>
+              <div style="font-size:11px;color:#8E8C86;">broken-navigation</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-info">○</span>
+            <div>
+              <div style="font-weight:500;">Many elements have insufficient spacing</div>
+              <div style="font-size:11px;color:#8E8C86;">spacing</div>
+            </div>
+          </div>
+        
+          <div class="issue-item">
+            <span class="severity-warning">○</span>
+            <div>
+              <div style="font-weight:500;">6 touch targets smaller than 44x44px</div>
+              <div style="font-size:11px;color:#8E8C86;">touch-target</div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+
+    <!-- SECTION: SEO Intelligence -->
+    <div class="section">
+      <h2 class="section-title">🔍 SEO Intelligence</h2>
+      <div class="card">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div>
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Meta Title</span>
+            <p style="margin:2px 0;font-size:13px;word-break:break-word;"><span style="color:#B0AEA8;">Not detected</span></p>
+          </div>
+          <div>
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Meta Description</span>
+            <p style="margin:2px 0;font-size:13px;word-break:break-word;"><span style="color:#B0AEA8;">Not detected</span></p>
+          </div>
+          <div>
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">SSL Enabled</span>
+            <p style="margin:2px 0;font-size:13px;"><span class="status-fail">○</span> No</p>
+          </div>
+          <div>
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Response Time</span>
+            <p style="margin:2px 0;font-size:13px;"><span style="color:#B0AEA8;">Not measured</span></p>
+          </div>
+          <div>
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;text-transform:uppercase;">Contact Page</span>
+            <p style="margin:2px 0;font-size:13px;"><span class="status-fail">○</span> Not found</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Performance -->
+    <div class="section">
+      <h2 class="section-title">⚡ Performance</h2>
+      <div class="card">
+        
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:12px;font-weight:500;color:#52525B;">Overall Score</span>
+          <span style="font-size:12px;font-weight:700;color:#F59E0B;">75/100</span>
+        </div>
+        <div style="background:#F3F4F6;border-radius:6px;height:8px;overflow:hidden;">
+          <div style="background:#F59E0B;width:75%;height:100%;border-radius:6px;"></div>
+        </div>
+      </div>
+    
+        
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:12px;font-weight:500;color:#52525B;">UI/UX Quality</span>
+          <span style="font-size:12px;font-weight:700;color:#DC2626;">0/100</span>
+        </div>
+        <div style="background:#F3F4F6;border-radius:6px;height:8px;overflow:hidden;">
+          <div style="background:#DC2626;width:0%;height:100%;border-radius:6px;"></div>
+        </div>
+      </div>
+    
+        
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:12px;font-weight:500;color:#52525B;">Mobile Experience</span>
+          <span style="font-size:12px;font-weight:700;color:#F59E0B;">55/100</span>
+        </div>
+        <div style="background:#F3F4F6;border-radius:6px;height:8px;overflow:hidden;">
+          <div style="background:#F59E0B;width:55%;height:100%;border-radius:6px;"></div>
+        </div>
+      </div>
+    
+        
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <span style="font-size:12px;font-weight:500;color:#52525B;">Lead Score</span>
+          <span style="font-size:12px;font-weight:700;color:#16A34A;">80/100</span>
+        </div>
+        <div style="background:#F3F4F6;border-radius:6px;height:8px;overflow:hidden;">
+          <div style="background:#16A34A;width:80%;height:100%;border-radius:6px;"></div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+    
+
+    <!-- SECTION: Business Intelligence -->
+    <div class="section">
+      <h2 class="section-title">📊 Business Intelligence</h2>
+
+      <div class="scores-row">
+        <div class="score-card">
+          <div class="score-value" style="color:#DC2626;">25</div>
+          <div class="score-label">Trust Score</div>
+        </div>
+        <div class="score-card">
+          <div class="score-value" style="color:#DC2626;">5</div>
+          <div class="score-label">Quality Score</div>
+        </div>
+        <div class="score-card">
+          <div class="score-value" style="color:#16A34A;">100</div>
+          <div class="score-label">Opportunity</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Opportunity Assessment</h3>
+          <div style="margin-bottom:8px;"><span style="font-size:11px;font-weight:600;color:#8E8C86;">Level:</span> <span class="badge" style="background:#F0FDF4;color:#16A34A;">high</span></div>
+          <p style="font-size:13px;line-height:1.5;color:#52525B;">Strong redesign candidate with 8 major improvement areas. High-value opportunity for comprehensive website modernization.</p>
+          <div style="margin-top:12px;">
+            <h4 style="margin:0 0 8px;font-size:12px;font-weight:600;color:#52525B;">Key Reasons</h4>
+            <ul style="margin:0;padding-left:16px;">
+              <li style="font-size:12px;color:#52525B;margin-bottom:4px;">Poor SEO optimization</li><li style="font-size:12px;color:#52525B;margin-bottom:4px;">Outdated website design</li><li style="font-size:12px;color:#52525B;margin-bottom:4px;">Not mobile-responsive</li><li style="font-size:12px;color:#52525B;margin-bottom:4px;">Weak social media presence</li><li style="font-size:12px;color:#52525B;margin-bottom:4px;">No SSL certificate</li><li style="font-size:12px;color:#52525B;margin-bottom:4px;">Missing contact form</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Digital Potential</h3>
+          <div style="margin-bottom:8px;">
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;">Redesign:</span>
+            <span style="font-size:12px;color:#52525B;"> Design analysis available upon audit</span>
+          </div>
+          <div style="margin-bottom:8px;">
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;">SEO:</span>
+            <span style="font-size:12px;color:#52525B;"> SEO analysis available upon audit</span>
+          </div>
+          <div style="margin-bottom:8px;">
+            <span style="font-size:11px;font-weight:600;color:#8E8C86;">Digital Marketing:</span>
+            <span style="font-size:12px;color:#52525B;"> Digital marketing analysis available upon audit</span>
+          </div>
+          
+          
+        </div>
+      </div>
+
+      
+
+      
+      <div class="two-col">
+        <div class="card">
+          <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Social Presence</h3>
+          <div class="status-grid">
+            <div class="status-item"><span class="status-fail">✗</span> Instagram</div>
+            <div class="status-item"><span class="status-fail">✗</span> Facebook</div>
+            <div class="status-item"><span class="status-fail">✗</span> LinkedIn</div>
+            <div class="status-item"><span class="status-pass">✓</span> YouTube</div>
+            <div class="status-item"><span class="status-fail">✗</span> WhatsApp</div>
+            <div style="grid-column:1/-1;padding-top:8px;border-top:1px solid #F3F4F6;"><span style="font-size:11px;font-weight:600;color:#8E8C86;">Score:</span> <span style="font-size:13px;font-weight:700;color:#DC2626;">15/100</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Contact Info</h3>
+          <div class="status-grid">
+            <div class="status-item"><span class="status-pass">✓</span> Phone</div>
+            <div class="status-item"><span class="status-fail">✗</span> Email</div>
+            <div class="status-item"><span class="status-fail">✗</span> Contact Form</div>
+            <div style="grid-column:1/-1;padding-top:8px;border-top:1px solid #F3F4F6;"><span style="font-size:11px;font-weight:600;color:#8E8C86;">Contact Methods:</span> <span style="font-size:13px;font-weight:600;">1</span></div>
+          </div>
+          
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #E5E7EB;">
+            <h4 style="margin:0 0 6px;font-size:12px;font-weight:600;color:#52525B;">Website Freshness</h4>
+            <p style="margin:0;font-size:13px;">Status: <strong>fresh</strong></p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background:#F0FDF4;border-color:#BBF7D0;">
+        <h3 style="margin:0 0 8px;font-size:14px;font-weight:600;color:#166534;">AI Recommendation</h3>
+        <p style="margin:0;font-size:13px;color:#14532D;line-height:1.6;">This business has 7 critical areas for improvement including Poor search engine visibility, Outdated or non-responsive design, Limited social media engagement. Strong candidate for comprehensive SEO Optimization + Website Redesign services with high ROI potential.</p>
+      </div>
+    </div>
+
+    <!-- SECTION: Outreach Suggestions -->
+    <div class="section">
+      <h2 class="section-title">✉️ Outreach Suggestions</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="margin:0 0 8px;font-size:14px;font-weight:600;">Cold Email</h3>
+          
+            <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:12px;font-size:12px;line-height:1.5;color:#52525B;max-height:200px;overflow:hidden;">
+              Hi Mahalaxmi Hangar Mart Team,
+We analyzed your website and identified several opportunities for improvement:
+• Weak mobile responsiveness
+• Non-responsive layout design
+• Below average UI/UX quality
+• Low trust signals on website
+On the positive side, your business has: strong customer ratings.
+We can help you with:
+✅ Modern website redesign with responsive layout
+✅ Mobile performance optimization
+✅ Improved user experience &amp; conversion optimization
+✅ SEO-friendly architecture
+Would you lik...
+            </div>
+          
+          <div style="margin-top:8px;"><span style="font-size:11px;font-weight:600;color:#8E8C86;">Outreach Probability:</span> <span style="font-size:13px;font-weight:600;">low</span></div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px;font-size:14px;font-weight:600;">WhatsApp Outreach</h3>
+          
+            <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:12px;font-size:12px;line-height:1.5;color:#52525B;max-height:200px;overflow:hidden;">
+              Hi Mahalaxmi Hangar Mart 👋
+
+We reviewed your website and found mobile responsiveness needs improvement.
+
+Would you like a free website audit report? We&#39;ll show you exactly how to improve your online presence.
+
+Let us know if you&#39;re interested!
+            </div>
+          
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:14px;font-weight:600;">Suggested Pitch Angles</h3>
+        <ul style="margin:0;padding-left:16px;">
+          
+          
+          
+          
+          <li style="font-size:13px;color:#52525B;margin-bottom:6px;"><strong>Local SEO:</strong> Help them dominate local search results with targeted SEO.</li>
+          <li style="font-size:13px;color:#52525B;margin-bottom:6px;"><strong>Lead Generation:</strong> Offer lead generation services tailored to their industry.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION: AI Recommendations -->
+    <div class="section">
+      <h2 class="section-title">🤖 AI Recommendations</h2>
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">What's Missing</h3>
+        <p style="font-size:13px;line-height:1.6;color:#52525B;">
+          The website has reasonable digital presence but there are opportunities for improvement across multiple dimensions.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Why Improvement Needed</h3>
+        <p style="font-size:13px;line-height:1.6;color:#52525B;">
+          With over 60% of web traffic coming from mobile devices, a non-mobile-friendly website is driving away potential customers. Mobile optimization is no longer optional - it is essential.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">How Conversions Can Improve</h3>
+        <ul style="margin:0;padding-left:16px;">
+          
+            <li style="font-size:13px;color:#52525B;margin-bottom:6px;">Improve page load speed to reduce bounce rates</li>
+            <li style="font-size:13px;color:#52525B;margin-bottom:6px;">Add clear calls-to-action above the fold</li>
+            <li style="font-size:13px;color:#52525B;margin-bottom:6px;">Optimize mobile experience for on-the-go conversions</li>
+          
+          <li style="font-size:13px;color:#52525B;margin-bottom:6px;">Implement live chat or chatbot for instant customer engagement</li>
+          <li style="font-size:13px;color:#52525B;margin-bottom:6px;">Add social proof elements like testimonials and case studies</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Why Redesign Needed</h3>
+        <p style="font-size:13px;line-height:1.6;color:#52525B;">
+          The current website quality score indicates significant room for improvement in design, usability, and overall user experience. A modern redesign would not only improve aesthetics but also enhance functionality, load times, and conversion rates.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px;font-weight:600;">Why SEO Needed</h3>
+        <p style="font-size:13px;line-height:1.6;color:#52525B;">
+          SEO is essential for any business looking to be found online. Even basic SEO improvements can lead to significant increases in organic visibility and qualified leads.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-text">
+      <p>Lead Finder Agent — AI-Powered Website Audit Report</p>
+      <p>Report generated for Mahalaxmi Hangar Mart | 16/6/2026</p>
+      <p>This report is for informational purposes. Scores and recommendations are AI-generated estimates.</p>
+    </div>
+
+  </div>
+</body>
+</html>

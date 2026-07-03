@@ -1,0 +1,5 @@
+Label: blocked-mid-collection
+URL: https://www.google.com/maps/search/Gym+in+Surat+Gujarat+India+Surat,+Gujarat,+India/@21.1759826,72.8193569,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D
+Title: Gym in Surat Gujarat India Surat, Gujarat, India - Google Maps
+Type: SIGN_IN
+Timestamp: 2026-06-29T05:08:20.859Z

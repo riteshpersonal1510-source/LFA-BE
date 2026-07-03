@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const analytics_controller_1 = require("../controllers/analytics.controller");
+const auth_middleware_1 = require("../middlewares/auth.middleware");
+const router = (0, express_1.Router)();
+router.get('/overview', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getOverview);
+router.get('/leads', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getLeadAnalytics);
+router.get('/scraping', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getScrapingAnalytics);
+router.get('/automation', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getAutomationAnalytics);
+router.get('/categories', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getCategoryDistribution);
+router.get('/leads-per-day', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getLeadsPerDay);
+router.get('/qualifications', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getQualificationDistribution);
+router.get('/website-status', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getWebsiteStatusDistribution);
+router.get('/area-density', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getAreaDensity);
+router.get('/top-areas', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getTopAreas);
+router.get('/top-locations', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getTopLocations);
+router.get('/highest-scored', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getHighestScoringBusinesses);
+router.get('/recent-scrapes', auth_middleware_1.authenticate, analytics_controller_1.analyticsController.getRecentScrapingHistory);
+exports.default = router;
+//# sourceMappingURL=analytics.route.js.map

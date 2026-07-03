@@ -1,0 +1,94 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build artifacts that will be generated
+dist
+
+# Environment files (use .env in container)
+.env.development
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+.nyc_output
+
+# Dependency directories
+.npm
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# IDE
+.vscode
+.idea
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Test files
+test
+tests
+**/*.test.js
+**/*.test.ts
+**/*.spec.js
+**/*.spec.ts
+
+# Temporary directories
+tmp
+temp
+
+# Debug screenshots and browser data
+debug-screenshots
+.gm-user-data
+forensic-evidence
+resume-states
+
+# Upload directories (will be created in container)
+uploads
+
+# Build tools
+.prettierrc
+.eslintrc.json
+vitest.config.ts
+
+# Deployment scripts (not needed in container)
+deploy.js
+health-check.js
+
+# Local development files
+test-*.js
+test-*.mjs
+test-*.cjs
+update_admin.js
+runtime-*.log
+compile_output.txt
+.crash-record
